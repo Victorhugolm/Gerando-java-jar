@@ -1,0 +1,21 @@
+Após criar o repositório, seguir os passos abaixo:
+
+Criar o repositório no GITHUB 
+execute o git bash no diretorio do arquivo
+- git init - usado para criar uma pasta ".git" use apenas uma vez por projeto
+- git add gitignore - usado para ignorar os arquivos que não importam
+- git add src/ - somente essa pasta irá para o git
+- git status
+- git add build.grade settings.grade gradlew.bat gradew
+- git status
+- git commit -m "escrever o comentario"
+- git remote add origin git@github.com:Victorhugolm/Server-Client.git - coloque o endereço do projeto atual
+- git push -u origin master - "-u é utilizado no primeiro upload"
+
+Exemplo, depois de mexido 
+
+- git status
+- git add (nome da pasta que alterou) Ex: git add src/
+- git status
+- git commit -m ""
+- git push origin master

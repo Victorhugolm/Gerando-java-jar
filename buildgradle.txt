@@ -1,0 +1,41 @@
+group 'br.com.tcp.servidor.app' // mudar o group
+version '1.0.0'
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "br.com.tcp.servidor.app.Main" // mudar o diretório da classe main
+apply plugin: 'com.github.johnrengelman.shadow'
+
+// run ShadowJar
+shadowJar {
+    configurations = [project.configurations.compile]
+    classifier = null
+    baseName = 'servidor' // determine o nome do aquivo jar
+    version = null
+}
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
+    }
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    // ************************************************************************************
+    // Netty
+    // https://mvnrepository.com/artifact/io.netty/netty-all -> entre no site para colocar a(s) dependencias para gerar o jar
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.66.Final'
+    // ************************************************************************************
+	
+	
+}
+test {
+    useJUnitPlatform()
+}
+
+// isso vai no build.gradle para gerar um jar.
